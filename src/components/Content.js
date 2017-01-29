@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Card from '../components/Card';
+import PriceFilter from '../components/PriceFilter';
 import '../css/Content.css';
 import courses from '../courses.json';
 import categories from '../categories.json';
@@ -8,11 +9,26 @@ class Content extends Component {
   constructor(props) {
     super(props);
 
+    const prices = courses.map(course => course.price).sort((a, b) => a - b);
+    this.min = prices[0];
+    this.max = prices[prices.length - 1];
+
     this.state = {
       courses,
+      min: this.min,
+      max: this.max,
     };
+
     this.handleChange = this.handleChange.bind(this);
     this.applyFilter = this.applyFilter.bind(this);
+    this.onPriceChange = this.onPriceChange.bind(this);
+  }
+
+  onPriceChange(prices) {
+    this.setState({
+      min: prices[0],
+      max: prices[1],
+    });
   }
 
   applyFilter(course) {
@@ -30,7 +46,11 @@ class Content extends Component {
       return isAllEmpty || isMatching;
     };
 
-    return isTextMatching() && isCategoryMatching();
+    const isPriceMatching = () => (
+      course.price >= this.state.min && course.price <= this.state.max
+    );
+
+    return isTextMatching() && isCategoryMatching() && isPriceMatching();
   }
 
   handleChange(e) {
@@ -77,6 +97,8 @@ class Content extends Component {
                 </label>
               ))}
             </div>
+            <br />
+            <PriceFilter min={this.min} max={this.max} onPriceChange={this.onPriceChange} />
           </div>
         </div>
         <div className="mdl-cell mdl-cell--9-col">
