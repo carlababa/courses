@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Card from '../components/Card.js';
+import Card from '../components/Card';
 import '../css/Content.css';
 import courses from '../courses.json';
 import categories from '../categories.json';
@@ -17,13 +17,16 @@ class Content extends Component {
 
   applyFilter(course) {
     const isTextMatching = () => {
-      const regexValue = new RegExp(this.state.searchValue, "i");
-      return !this.state.searchValue || regexValue.test(course.title) || regexValue.test(course.description);
+      const searchValue = this.state.searchValue;
+      const search = new RegExp(searchValue, 'i');
+      return !searchValue || search.test(course.title) || search.test(course.description);
     };
 
     const isCategoryMatching = () => {
       const isAllEmpty = categories.every(category => !this.state[category.id]);
-      const isMatching = categories.some(category => this.state[category.id] && course.category === category.id);
+      const isMatching = categories.some(category => (
+        this.state[category.id] && course.category === category.id
+      ));
       return isAllEmpty || isMatching;
     };
 
@@ -58,8 +61,18 @@ class Content extends Component {
             <div className="categories">
               <h6>Filter by categories</h6>
               {categories.map(category => (
-                <label key={category.id} className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" htmlFor={category.id}>
-                  <input type="checkbox" name={category.id} id={category.id} onChange={this.handleChange} className="mdl-checkbox__input" />
+                <label
+                  key={category.id}
+                  className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect"
+                  htmlFor={category.id}
+                >
+                  <input
+                    type="checkbox"
+                    name={category.id}
+                    id={category.id}
+                    onChange={this.handleChange}
+                    className="mdl-checkbox__input"
+                  />
                   <span className="mdl-checkbox__label">{category.title}</span>
                 </label>
               ))}
@@ -68,7 +81,10 @@ class Content extends Component {
         </div>
         <div className="mdl-cell mdl-cell--9-col">
           <div className="mdl-grid courses-container">
-            {this.state.courses.filter(this.applyFilter).map(course => <Card key={course.id} course={course}/>)}
+            {this.state.courses
+              .filter(this.applyFilter)
+              .map(course => <Card key={course.id} course={course} />)
+            }
           </div>
         </div>
       </div>

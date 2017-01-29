@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/Card.css';
 
-const Card = (props) => (
+const Card = props => (
   <div className="mdl-cell mdl-cell--4-col">
     <div className="mdl-card mdl-shadow--2dp card">
       <div className="mdl-card__title">
@@ -13,5 +13,9 @@ const Card = (props) => (
     </div>
   </div>
 );
+
+Card.propTypes = {
+  course: React.PropTypes.object.isRequired,
+};
 
 export default Card;
