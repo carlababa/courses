@@ -1,0 +1,12 @@
+.rc-slider-handle {
+  background-color: #673ab7;
+  border-color: #673ab7;
+}
+
+.rc-slider-handle:hover {
+  border-color: #fff;
+}
+
+.rc-slider-track {
+  background-color: #673ab7;
+}
