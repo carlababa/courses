@@ -1,0 +1,22 @@
+.page-content {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-top: 40px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .page-content {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .page-content {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .page-content {
+    width: 1170px;
+  }
+}

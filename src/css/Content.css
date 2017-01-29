@@ -1,0 +1,18 @@
+.filter-container {
+  background-color: lightgray;
+  padding: 0 20px;
+  /*height: 100%;*/
+}
+
+.courses-container {
+  text-align: center;
+  background-color: lightgray;
+}
+
+.testing {
+  height: 100%;
+}
+
+.categories {
+  display: block;
+}
