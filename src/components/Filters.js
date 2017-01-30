@@ -36,7 +36,6 @@ const Filters = props => (
           </label>
         ))}
       </div>
-      <br />
       <PriceFilter
         min={props.min}
         max={props.max}

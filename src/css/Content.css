@@ -1,15 +1,15 @@
 .filter-container {
-  background-color: lightgray;
+  background-color: #E0E0E2;
   padding: 0 20px;
-  /*height: 100%;*/
 }
 
 .courses-container {
   text-align: center;
-  background-color: lightgray;
+  background-color: #E0E0E2;
+  min-height: 350px;
 }
 
-.testing {
+.filter {
   height: 100%;
 }
 

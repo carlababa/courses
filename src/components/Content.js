@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Card from '../components/Card';
 import Filters from '../components/Filters';
+import Footer from '../components/Footer';
 import '../css/Content.css';
 import courses from '../courses.json';
 import categories from '../categories.json';
@@ -61,7 +62,16 @@ class Content extends Component {
     });
   }
 
+  renderNotFound() {
+    return (
+      <div className="mdl-cell mdl-cell--12-col">
+        <h4>Sorry, no courses matched your criteria!</h4>
+      </div>
+    );
+  }
+
   render() {
+    const coursesFiltered = this.state.courses.filter(this.applyFilter);
     return (
       <div className="mdl-grid">
         <Filters
@@ -74,11 +84,13 @@ class Content extends Component {
         />
         <div className="mdl-cell mdl-cell--9-col">
           <div className="mdl-grid courses-container">
-            {this.state.courses
-              .filter(this.applyFilter)
-              .map(course => <Card key={course.id} course={course} />)
-            }
+            { coursesFiltered.length
+              ? coursesFiltered.map(course => <Card key={course.id} course={course} />)
+              : this.renderNotFound()}
           </div>
+        </div>
+        <div className="mdl-cell mdl-cell--12-col">
+          <Footer />
         </div>
       </div>
     );

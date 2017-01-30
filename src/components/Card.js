@@ -12,9 +12,7 @@ const Card = props => (
         {props.course.description}
       </div>
       <div className="price-container">
-        <span className="price-card-text">
-          {props.course.price.toFixed(2)} &euro;
-        </span>
+        <span>{props.course.price.toFixed(2)} &euro;</span>
       </div>
     </div>
   </div>

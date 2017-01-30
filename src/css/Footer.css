@@ -1,0 +1,16 @@
+.footer-container {
+  background-color: #673ab7;
+  text-align: center;
+  padding: 5px;
+}
+
+.footer-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-text a {
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+}

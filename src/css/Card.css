@@ -7,16 +7,16 @@
   height: 30px;
 }
 
-.price-card-text {
+.price-container span {
   color: #000;
   font-size: 14px;
   font-weight: 500;
   padding: 10px;
   position: absolute;
-  background: rgba(0, 0, 0, 0.2);
-  width: 100%;
   bottom: 0;
   right: 0;
+  background: rgba(0, 0, 0, 0.1);
+  width: 100%;
   text-align: right;
 }
 
@@ -35,4 +35,5 @@
   font-weight: 500;
   top: 0;
   padding: 20px;
+  color: #454746;
 }
