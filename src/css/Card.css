@@ -3,10 +3,6 @@
   height: 100%;
 }
 
-.mdl-cell {
-  min-width: 200px;
-}
-
 .price-container {
   height: 30px;
 }
@@ -41,20 +37,9 @@
   color: #454746;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1200px) and (min-width: 840px),
+(max-width: 575px) and (min-width: 480px) {
   .course-main h2 {
     font-size: 18px;
-  }
-}
-
-@media all and (max-width: 850px) and (min-width: 550px) {
-  .course-main h2 {
-    font-size: 20px;
-  }
-}
-
-@media all and (max-width: 952px) and (min-width: 840px) {
-  .mdl-cell {
-    min-width: 250px;
   }
 }

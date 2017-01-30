@@ -6,10 +6,11 @@ const Filters = props => (
   <div
     className="mdl-cell mdl-cell--3-col
       mdl-cell--12-col-tablet
+      mdl-cell--12-col-phone
       filter-container"
   >
     <div className="mdl-grid filter">
-      <div className="mdl-cell--3-col-tablet">
+      <div className="mdl-cell--12-col mdl-cell--3-col-tablet">
         <h5>Filters</h5>
         <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label search">
           <input
@@ -23,7 +24,7 @@ const Filters = props => (
           <label className="mdl-textfield__label" htmlFor="search">Search</label>
         </div>
       </div>
-      <div className="mdl-cell--3-col-tablet">
+      <div className="mdl-cell--12-col mdl-cell--3-col-tablet categories">
         <h6>Filter by categories</h6>
         {props.categories.map(category => (
           <label

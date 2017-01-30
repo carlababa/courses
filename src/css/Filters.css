@@ -18,12 +18,11 @@
 
 .filter-container.mdl-cell {
   background-color: #E0E0E2;
-  padding: 0 20px 20px 10px;
-  min-width: 200px;
+  padding: 0 10px 0 10px;
 }
 
-@media all and (max-width: 479px) {
-  .filter-container.mdl-cell {
-    width: 100%;
+@media (max-width: 839px) and (min-width: 480px) {
+  .categories {
+    padding-left: 35px;
   }
 }
