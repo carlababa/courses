@@ -10,3 +10,20 @@
 .rc-slider-track {
   background-color: #673ab7;
 }
+
+.mdl-textfield.search {
+  width: 100%;
+  padding-right: 20px;
+}
+
+.filter-container.mdl-cell {
+  background-color: #E0E0E2;
+  padding: 0 20px 20px 10px;
+  min-width: 200px;
+}
+
+@media all and (max-width: 479px) {
+  .filter-container.mdl-cell {
+    width: 100%;
+  }
+}

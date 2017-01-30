@@ -3,6 +3,10 @@
   height: 100%;
 }
 
+.mdl-cell {
+  min-width: 200px;
+}
+
 .price-container {
   height: 30px;
 }
@@ -10,7 +14,6 @@
 .price-container span {
   color: #000;
   font-size: 14px;
-  font-weight: 500;
   padding: 10px;
   position: absolute;
   bottom: 0;
@@ -36,4 +39,22 @@
   top: 0;
   padding: 20px;
   color: #454746;
+}
+
+@media (max-width: 1200px) {
+  .course-main h2 {
+    font-size: 18px;
+  }
+}
+
+@media all and (max-width: 850px) and (min-width: 550px) {
+  .course-main h2 {
+    font-size: 20px;
+  }
+}
+
+@media all and (max-width: 952px) and (min-width: 840px) {
+  .mdl-cell {
+    min-width: 250px;
+  }
 }

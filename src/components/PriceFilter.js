@@ -16,7 +16,7 @@ const PriceFilterTooltip = props => (
 );
 
 const PriceFilter = props => (
-  <div>
+  <div className="mdl-cell--2-col-tablet">
     <h6>Filter by price range</h6>
     <Range
       defaultValue={[props.min, props.max]}
