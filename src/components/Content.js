@@ -40,12 +40,12 @@ class Content extends Component {
     };
 
     const isCategoryMatching = () => {
-      const isAllEmpty = () => { categories.every(category => !this.state[category.id]); };
-      const isMatching = () => {
+      const isAllEmpty = () => (categories.every(category => !this.state[category.id]));
+      const isMatching = () => (
         categories.some(category => (
-        this.state[category.id] && course.category === category.id
-        ));
-      };
+          this.state[category.id] && course.category === category.id
+        ))
+      );
       return isAllEmpty() || isMatching();
     };
 
