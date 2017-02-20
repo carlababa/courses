@@ -1,3 +1,6 @@
+## Demo
+[https://courses-filter.herokuapp.com/](https://courses-filter.herokuapp.com/)
+
 ## How to start
 
 ```
